@@ -40,7 +40,7 @@ public class BrowserHandler implements Callable<Boolean> {
     private void writeToCafe(String subject, String body) throws InterruptedException {
         try {
             Thread.sleep(620);
-            webDriver.get("https://m.cafe.naver.com/ArticleWrite.nhn?m=write&clubid=30111005&menuid=28");
+            webDriver.get("카페글 작성 URL(모바일 버전) 사용하세요");
             WebDriverWait wait = new WebDriverWait(webDriver, 30);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("subject")));
             WebElement T_BOX_SUBJECT = webDriver.findElement(By.id("subject"));
@@ -91,11 +91,12 @@ public class BrowserHandler implements Callable<Boolean> {
        new BrowserHandler();
 
     }
+    
     private void setClipBoard(String value){
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(value), null);
     }
 
-
+    //미완성
     @Override
     public Boolean call() throws Exception {
         Runtime.getRuntime().exec("taskkill /IM chromedriver.exe  /F");
