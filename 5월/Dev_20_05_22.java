@@ -54,7 +54,7 @@ public class BrowserHandler implements Runnable {
         try {
             Thread.sleep(620);
             WebDriverWait wait = new WebDriverWait(webDriver, 30);
-            webDriver.get("https://m.cafe.naver.com/ArticleWrite.nhn?m=write&clubid=30111005&menuid=28");
+            webDriver.get("blank");
             wait.until(ExpectedConditions.alertIsPresent());
             webDriver.switchTo().alert().accept();
             CallEvent("WRITE");
